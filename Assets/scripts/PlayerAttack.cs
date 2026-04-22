@@ -7,6 +7,11 @@ public class PlayerAttack : MonoBehaviour
     public float attackDuration = 0.3f;
     public Animator animator;
 
+    void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
