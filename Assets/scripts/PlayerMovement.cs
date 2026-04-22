@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
     public Transform modelo;
     public float rotationSpeed = 10f;
 
+    void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
 
     void Update()
     
