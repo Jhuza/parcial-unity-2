@@ -17,7 +17,7 @@ public class aiMovement : MonoBehaviour
         if (animator != null)
             animator.applyRootMotion = false;
 
-        Debug.Log("¿Está en NavMesh? " + agent.isOnNavMesh);
+        Debug.Log("¿NavMesh?????? " + agent.isOnNavMesh);
     }
 
     void Update()
@@ -26,7 +26,6 @@ public class aiMovement : MonoBehaviour
 
         agent.SetDestination(target.position);
 
-        // Solo setea el float si el parámetro existe en el Animator
         if (animator != null && AnimatorHasParameter("velocidad", animator))
         {
             float speed = agent.velocity.magnitude;

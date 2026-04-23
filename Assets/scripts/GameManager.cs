@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public float tiempo = 60f;
     public int monedas = 0;
 
-    // Eventos para notificar al HUD
     public System.Action<float> onTiempoChanged;
     public System.Action<int> onMonedasChanged;
 
@@ -19,7 +18,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         tiempo -= Time.deltaTime;
-        onTiempoChanged?.Invoke(tiempo); // Notifica al HUD cada frame
+        onTiempoChanged?.Invoke(tiempo);
 
         if (tiempo <= 0)
         {

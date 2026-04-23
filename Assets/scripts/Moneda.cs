@@ -8,8 +8,8 @@ public class Moneda : MonoBehaviour
         {
             Debug.Log("Es el jugador");
             Destroy(gameObject);
-            GameManager.instance.AñadirMoneda(); // Suma moneda al contador
-            GameManager.instance.AñadirTiempo(10f); // Y también añade tiempo
+            GameManager.instance.AñadirMoneda();
+            GameManager.instance.AñadirTiempo(10f);
         }
     }
 }
