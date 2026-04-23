@@ -5,6 +5,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public float tiempo = 60f;
+    public int monedas = 0;
+
+    // Eventos para notificar al HUD
+    public System.Action<float> onTiempoChanged;
+    public System.Action<int> onMonedasChanged;
 
     void Awake()
     {
@@ -14,6 +19,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         tiempo -= Time.deltaTime;
+        onTiempoChanged?.Invoke(tiempo); // Notifica al HUD cada frame
 
         if (tiempo <= 0)
         {
@@ -26,20 +32,23 @@ public class GameManager : MonoBehaviour
     public void RestarTiempo(float cantidad)
     {
         tiempo -= cantidad;
+        if (tiempo < 0) tiempo = 0;
 
-        if (tiempo < 0)
-            tiempo = 0;
-
+        onTiempoChanged?.Invoke(tiempo);
         Debug.Log("Tiempo restante: " + tiempo);
     }
 
     public void AñadirTiempo(float cantidad)
     {
         tiempo += cantidad;
-
-        if (tiempo < 0)
-            tiempo = 0;
-
+        onTiempoChanged?.Invoke(tiempo);
         Debug.Log("Tiempo restante: " + tiempo);
+    }
+
+    public void AñadirMoneda()
+    {
+        monedas++;
+        onMonedasChanged?.Invoke(monedas);
+        Debug.Log("Monedas: " + monedas);
     }
 }
