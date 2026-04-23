@@ -2,16 +2,30 @@ using UnityEngine;
 
 public class Moneda : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
-{
-    Debug.Log(other.name);
-    Debug.Log(other.tag);
+    public AudioClip sonidoMoneda;
+    public float boostVelocidad = 1f; // Cuánta velocidad añade cada moneda
 
-    if (other.CompareTag("Player"))
+    void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Es el jugador");
-        Destroy(gameObject);
-        GameManager.instance.AñadirTiempo(10f);
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Es el jugador");
+
+            // Aumenta la velocidad del jugador
+            PlayerMovement pm = other.GetComponent<PlayerMovement>();
+            if (pm != null)
+            {
+                pm.AumentarVelocidad(boostVelocidad);
+            }
+
+            // Reproduce el sonido antes de destruir el objeto
+            if (sonidoMoneda != null)
+            {
+                AudioSource.PlayClipAtPoint(sonidoMoneda, transform.position);
+            }
+
+            GameManager.instance.AñadirTiempo(10f);
+            Destroy(gameObject);
+        }
     }
-}
 }

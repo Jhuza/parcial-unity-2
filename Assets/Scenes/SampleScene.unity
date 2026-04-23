@@ -498,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7b9a4dcc6520fb458f4b80cda74c013, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.029804
+      value: 24.07
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a7b9a4dcc6520fb458f4b80cda74c013, type: 3}
       propertyPath: m_LocalPosition.z
@@ -536,6 +536,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeletonzombie T Avelange
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: a7b9a4dcc6520fb458f4b80cda74c013, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c602c0165fb3b2e4c96dd852010f975b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -549,6 +553,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7b9a4dcc6520fb458f4b80cda74c013, type: 3}
       insertIndex: -1
       addedObject: {fileID: 280733655}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7b9a4dcc6520fb458f4b80cda74c013, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 280733660}
   m_SourcePrefab: {fileID: 100100000, guid: a7b9a4dcc6520fb458f4b80cda74c013, type: 3}
 --- !u!1 &280733654 stripped
 GameObject:
@@ -615,7 +622,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a4b3c47b053c142a31c696ad6585de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1996678068}
+  velocidadInicial: 3.5
+  velocidadMaxima: 10
+  tasaAumento: 0.5
+  tiempoCooldown: 2
+--- !u!195 &280733660
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280733654}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &305637818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,7 +1691,7 @@ GameObject:
   - component: {fileID: 848313963}
   m_Layer: 0
   m_Name: Sphere (8)
-  m_TagString: Untagged
+  m_TagString: Moneda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1702,6 +1735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae556585d812a7746b4723daddcf5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoMoneda: {fileID: 0}
+  boostVelocidad: 1
 --- !u!135 &848313965
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1717,7 +1752,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2152,7 +2187,7 @@ GameObject:
   - component: {fileID: 1146700435}
   m_Layer: 0
   m_Name: Sphere (2)
-  m_TagString: Untagged
+  m_TagString: Moneda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2196,6 +2231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae556585d812a7746b4723daddcf5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoMoneda: {fileID: 0}
+  boostVelocidad: 1
 --- !u!135 &1146700437
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2211,7 +2248,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2844,7 +2881,7 @@ GameObject:
   - component: {fileID: 1549113274}
   m_Layer: 0
   m_Name: Sphere (4)
-  m_TagString: Untagged
+  m_TagString: Moneda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2888,6 +2925,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae556585d812a7746b4723daddcf5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoMoneda: {fileID: 0}
+  boostVelocidad: 1
 --- !u!135 &1549113276
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2903,7 +2942,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3025,7 +3064,7 @@ GameObject:
   - component: {fileID: 1556850492}
   m_Layer: 0
   m_Name: Sphere (9)
-  m_TagString: Untagged
+  m_TagString: Moneda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3069,6 +3108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae556585d812a7746b4723daddcf5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoMoneda: {fileID: 0}
+  boostVelocidad: 1
 --- !u!135 &1556850494
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3084,7 +3125,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3205,7 +3246,7 @@ GameObject:
   - component: {fileID: 1664689859}
   m_Layer: 0
   m_Name: Sphere (7)
-  m_TagString: Untagged
+  m_TagString: Moneda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3249,6 +3290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae556585d812a7746b4723daddcf5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoMoneda: {fileID: 0}
+  boostVelocidad: 1
 --- !u!135 &1664689861
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3264,7 +3307,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3610,7 +3653,7 @@ GameObject:
   - component: {fileID: 1861617624}
   m_Layer: 0
   m_Name: Sphere (6)
-  m_TagString: Untagged
+  m_TagString: Moneda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3654,6 +3697,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae556585d812a7746b4723daddcf5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoMoneda: {fileID: 0}
+  boostVelocidad: 1
 --- !u!135 &1861617626
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3669,7 +3714,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3759,7 +3804,7 @@ GameObject:
   - component: {fileID: 1871025998}
   m_Layer: 0
   m_Name: Sphere (5)
-  m_TagString: Untagged
+  m_TagString: Moneda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3803,6 +3848,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae556585d812a7746b4723daddcf5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoMoneda: {fileID: 0}
+  boostVelocidad: 1
 --- !u!135 &1871026000
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3818,7 +3865,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4072,6 +4119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae556585d812a7746b4723daddcf5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoMoneda: {fileID: 0}
+  boostVelocidad: 1
 --- !u!135 &1952168506
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4087,7 +4136,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4278,7 +4327,7 @@ GameObject:
   - component: {fileID: 1987098056}
   m_Layer: 0
   m_Name: Sphere (3)
-  m_TagString: Untagged
+  m_TagString: Moneda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4322,6 +4371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae556585d812a7746b4723daddcf5681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoMoneda: {fileID: 8300000, guid: c6ea4ae8a1d0ac3448c8983c1b3ca675, type: 3}
+  boostVelocidad: 1
 --- !u!135 &1987098058
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4337,7 +4388,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4471,14 +4522,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7865937493154655368, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: -6058681868354798846, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: -1153839659810198550, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.43
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
       propertyPath: m_Name
       value: Remy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1320764503449572466, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 4167280743394806330, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653519914247303419, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.43
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c602c0165fb3b2e4c96dd852010f975b, type: 2}
+    - target: {fileID: 8126480335662930300, guid: 5ad3ff2874d42a847a7f6e514972cbec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4547,8 +4634,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: -3.2, z: 1}
-  m_Center: {x: 0, y: 1.98, z: 0}
+  m_Size: {x: 1, y: -3.45, z: 1}
+  m_Center: {x: 0, y: 0.42, z: 0}
 --- !u!114 &1996678066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4562,6 +4649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 5
+  velocidadMaxima: 15
   animator: {fileID: 0}
 --- !u!4 &1996678068 stripped
 Transform:
